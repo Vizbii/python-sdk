@@ -245,7 +245,7 @@ class WatsonDeveloperCloudService(object):
             headers['x-watson-learning-opt-out'] = 'true'
 
         response = requests.request(method=method, url=full_url, cookies=self.jar, auth=auth, headers=headers,
-                                    params=params, data=data, files=files, **kwargs)
+                                    params=params, data=data, files=files, verify=False, **kwargs)
 
         if 200 <= response.status_code <= 299:
             if accept_json:
